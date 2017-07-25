@@ -433,9 +433,9 @@ bool DocumentBroker::load(const std::shared_ptr<ClientSession>& session, const s
         username = wopifileinfo->_username;
         userExtraInfo = wopifileinfo->_userExtraInfo;
 
-        if (!wopifileinfo->_userCanWrite ||
-            LOOLWSD::IsViewFileExtension(wopiStorage->getFileExtension()))
+        if (!wopifileinfo->_userCanWrite || LOOLWSD::IsViewFileExtension(wopiStorage->getFileExtension()))
         {
+            LOG_DBG("\n\nUserCanWrite: "+ wopifileinfo->_userCanWrite+".\nIsViewFileExtension: "+LOOLWSD::IsViewFileExtension(wopiStorage->getFileExtension()));
             LOG_DBG("Setting the session as readonly");
             session->setReadOnly();
         }

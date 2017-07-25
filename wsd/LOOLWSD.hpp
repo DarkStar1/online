@@ -82,7 +82,7 @@ public:
         return LOOLWSD::SSLTermination.get();
     }
 
-    /// Return truee iff extension is marked as view action in discovery.xml.
+    /// Return true if extension is marked as view action in discovery.xml.
     static bool IsViewFileExtension(const std::string& extension)
     {
         return EditFileExtensions.find(extension) == EditFileExtensions.end();
